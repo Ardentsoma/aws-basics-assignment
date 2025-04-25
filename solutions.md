@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d082d18b-f734-4e99-8bc3-0a054be77f4f)##  1. VPC & Networking (Custom Networking)
+##  1. VPC & Networking (Custom Networking)
 
 ### Steps:
 - Created a **custom VPC** with CIDR block `10.0.0.0/16`.
