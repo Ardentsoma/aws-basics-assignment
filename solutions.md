@@ -33,3 +33,14 @@ sudo nano /var/www/html/index.html
 - Configured a **Listener on port 80** to forward traffic to the target group.
 - Tested the **ALB DNS URL** in a browser to verify load balancing.
 
+## 4. IAM Users & Policies
+### Steps:
+- Created an IAM user named developer.
+- Created a group called dev-group.
+- - Added the user to the group.
+- Attached the following permissions to the group:
+   AmazonEC2FullAccess
+   AmazonS3FullAccess
+
+
+
