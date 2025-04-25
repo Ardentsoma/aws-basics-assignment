@@ -1,4 +1,4 @@
-##  1. VPC & Networking (Custom Networking)
+![image](https://github.com/user-attachments/assets/d082d18b-f734-4e99-8bc3-0a054be77f4f)##  1. VPC & Networking (Custom Networking)
 
 ### Steps:
 - Created a **custom VPC** with CIDR block `10.0.0.0/16`.
@@ -39,8 +39,33 @@ sudo nano /var/www/html/index.html
 - Created a group called dev-group.
 - - Added the user to the group.
 - Attached the following permissions to the group:
-   AmazonEC2FullAccess
-   AmazonS3FullAccess
+   `AmazonEC2FullAccess`
+   `AmazonS3FullAccess`
+
+  ## 5. S3 Bucket
+  
+### Steps:
+- Created S3 bucket: **soma-private-bucket1**.
+- Enabled versioning via the console.
+- Uploaded a sample file.
+- Uploaded a new version of the same file to verify versioning
+- Configured **bucket policy** to deny public access:
+
+```
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1745533251630",
+    "Statement": [
+        {
+            "Sid": "Stmt1745533239951",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::soma-private-bucket1/*"
+        }
+    ]
+}
+```
 
 
 
