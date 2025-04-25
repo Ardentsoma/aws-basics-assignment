@@ -8,13 +8,20 @@
 - Created and attached an **Internet Gateway** to the VPC.
 - Created a **Route Table** and updated it with the internet gateway for the public subnet to allow internet access.
 =======
-##  1. VPC & Networking (Custom Networking)
+
+## 2. Launch EC2 Instances
 
 ### Steps:
-- Created a **custom VPC** with CIDR block `10.0.0.0/16`.
-- Created:
-  - **2 Public Subnet** (e.g., `10.0.1.0/24`)
-  - **2 Private Subnet** (e.g., `10.0.2.0/24`)
-- Created and attached an **Internet Gateway** to the VPC.
-- Updated **Route Table** for the public subnet to allow internet access.
+- Launched 2 **EC2 instances** in the public subnet using Amazon Linux 2.
+- Installed **Apache** on both instances.
+- Created a custom **index.html** file to show different messages per server.
+  
+```
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo nano /var/www/html/index.html
+```
+- Launched 2 **EC2 instances** in the private subnet using Amazon Linux 2.
 
